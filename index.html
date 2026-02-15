@@ -2,50 +2,172 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Skin Disease Detection - PBL</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CNN Skin Disease Detection</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{background:#020617;color:white;font-family:system-ui}
+.glass{background:rgba(255,255,255,0.04);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.08);}
+.gradient-text{background:linear-gradient(90deg,#60a5fa,#a855f7);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+html{scroll-behavior:smooth}
+</style>
 </head>
 
 <body>
 
-<header>
-<h1>CNN-Based Skin Disease Detection System</h1>
-<p>AI model for automatic classification of skin lesion images</p>
-</header>
+<!-- NAVBAR -->
+<nav class="fixed w-full top-0 glass px-8 py-4 flex justify-between z-50">
+<div class="font-bold text-lg">SkinDisease-CNN-PBL</div>
+<div class="flex gap-6 text-sm">
+<a href="#problem">Problem</a>
+<a href="#method">Method</a>
+<a href="#results">Results</a>
+</div>
+</nav>
 
-<section>
-<h2>Problem Statement</h2>
-<p>
-Manual diagnosis of skin diseases requires dermatology expertise and may be subjective.
-This project builds an automated CNN-based image classifier for early detection.
+<div class="pt-32 max-w-6xl mx-auto px-6 space-y-32">
+
+<!-- HERO -->
+<section class="text-center">
+<h1 class="text-6xl font-black mb-6">
+<span class="gradient-text">CNN-Based Skin Disease Detection</span>
+</h1>
+
+<p class="text-slate-400 italic text-lg">
+AI model for automatic classification of dermoscopic skin lesions.
 </p>
 </section>
 
-<section>
-<h2>Dataset</h2>
-<p>
-Mendeley Skin Disease Dataset containing 3230 dermoscopic images across 6 classes.
-Images resized to 128x128 and normalized.
+
+<!-- PROBLEM -->
+<section id="problem" class="grid md:grid-cols-2 gap-12">
+
+<div class="glass p-10 rounded-3xl">
+<h2 class="text-3xl font-bold mb-6">Problem Statement</h2>
+
+<p class="text-slate-400 leading-relaxed">
+Manual dermatology diagnosis requires expert knowledge and is subjective.
+Our system builds an automated CNN-based classifier capable of identifying
+skin diseases from lesion images for early detection and improved healthcare accessibility.
 </p>
+
+</div>
+
+<div class="space-y-6">
+
+<div class="glass p-6 rounded-2xl">
+<h3 class="text-blue-400 font-bold mb-2">Literature Review</h3>
+<p class="text-slate-400 text-sm">
+Traditional ML systems depend on handcrafted features.
+Recent CNN architectures achieve strong performance but require large datasets.
+</p>
+</div>
+
+<div class="glass p-6 rounded-2xl">
+<h3 class="text-purple-400 font-bold mb-2">Research Gap</h3>
+<p class="text-slate-400 text-sm">
+Need lightweight CNN optimized for limited datasets and deployable for real-time classification.
+</p>
+</div>
+
+</div>
 </section>
 
-<section>
-<h2>Model Architecture</h2>
-<p>
-CNN with convolution layers, pooling layers, dropout, and dense layers using TensorFlow & Keras.
+
+<!-- METHODOLOGY -->
+<section id="method">
+
+<h2 class="text-4xl text-center font-black mb-12">
+System <span class="text-blue-500">Methodology</span>
+</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="glass p-8 rounded-3xl text-center">
+<h3 class="font-bold mb-2">Dataset</h3>
+<p class="text-slate-400 text-sm">
+Mendeley Skin Dataset — 3230 dermoscopic images.
+<br><br>
+Future improvement: HAM10000 dataset integration.
 </p>
+</div>
+
+<div class="glass p-8 rounded-3xl text-center">
+<h3 class="font-bold mb-2">Model</h3>
+<p class="text-slate-400 text-sm">
+CNN architecture with convolution, pooling, dropout and dense layers.
+Built using TensorFlow & Keras.
+</p>
+</div>
+
+<div class="glass p-8 rounded-3xl text-center border border-green-500/40">
+<h3 class="text-green-400 font-bold mb-4">Repository</h3>
+<a href="https://github.com/shreshth-j/SkinDisease-CNN-PBL"
+class="bg-green-600 px-6 py-2 rounded-full font-bold">
+View GitHub
+</a>
+</div>
+
+</div>
+
 </section>
 
-<section>
-<h2>Results</h2>
 
+
+<!-- RESULTS -->
+<section id="results" class="glass p-12 rounded-3xl">
+
+<h2 class="text-3xl font-black mb-10 text-center">
+Results & Evaluation
+</h2>
+
+<div class="grid md:grid-cols-2 gap-12">
+
+<div style="height:300px">
 <canvas id="chart"></canvas>
+</div>
 
-<p>Current validation accuracy: <b>46%</b></p>
+<div class="flex flex-col justify-center">
+
+<div class="glass p-6 rounded-2xl mb-6">
+<span class="text-slate-400">Current Accuracy</span>
+<div class="text-4xl text-blue-400 font-black">46%</div>
+</div>
+
+<p class="text-slate-400 text-sm">
+Performance expected to improve beyond 90% after integrating HAM10000 dataset
+and applying transfer learning with MobileNet / EfficientNet.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
-<script src="script.js"></script>
+</div>
+
+
+
+<!-- CHART SCRIPT -->
+<script>
+new Chart(document.getElementById("chart"),{
+type:'bar',
+data:{
+labels:["Baseline","CNN Model"],
+datasets:[{
+data:[20,46],
+backgroundColor:["#1e293b","#3b82f6"],
+borderRadius:12
+}]
+},
+options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}
+});
+</script>
+
 </body>
 </html>
