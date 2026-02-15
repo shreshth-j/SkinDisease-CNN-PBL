@@ -1,0 +1,24 @@
+body{
+font-family: Arial;
+background:#0a0f1f;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+section{
+background:#121a35;
+margin:30px auto;
+padding:25px;
+border-radius:15px;
+width:70%;
+}
+
+h1{
+color:#60a5fa;
+}
+
+canvas{
+max-width:500px;
+margin:auto;
+}
