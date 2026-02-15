@@ -2,263 +2,149 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>CNN Skin Disease Detection</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-body{
-background:#020617;
-color:white;
-font-family:'Plus Jakarta Sans',sans-serif;
-margin:0;
-}
-
-/* NAVBAR */
-nav{
-position:fixed;
-top:0;
-width:100%;
-padding:15px 40px;
-display:flex;
-justify-content:space-between;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
-}
-
-nav img{height:38px;}
-
-nav a{
-color:#aaa;
-margin-left:20px;
-text-decoration:none;
-font-weight:600;
-}
-
-/* HERO */
-
-.hero{
-padding-top:140px;
-text-align:center;
-}
-
-.gradient{
-background:linear-gradient(90deg,#60a5fa,#a855f7);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.id{
-font-size:12px;
-opacity:.6;
-margin-bottom:15px;
-}
-
-/* CARDS */
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:50px 20px;
-}
-
-.card{
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:22px;
-padding:30px;
-margin:20px 0;
-}
-
-.flex{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.box{
-flex:1;
-min-width:250px;
-}
-
-.center{text-align:center}
-
-/* TIMER */
-
-#timer{
-position:fixed;
-bottom:30px;
-right:30px;
-background:white;
-color:black;
-padding:10px 25px;
-border-radius:25px;
-font-size:26px;
-font-weight:bold;
-}
-
-/* FOOTER */
-
-.footer{
-text-align:center;
-opacity:.4;
-padding:60px 0 20px;
-font-size:12px;
-}
-
-</style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav>
-<div>
-<img src="logo.png">
-</div>
+<!-- ===== HEADER ===== -->
+
+<header>
+
+<div class="left">
+
+<img src="logo.png" class="logo">
 
 <div>
-<a href="#">PROBLEM</a>
-<a href="#">METHODOLOGY</a>
-<a href="#">RESULTS</a>
-<a href="#">TEAM</a>
+<h3>PBL 2026</h3>
+<p>Dept. of CSE | Manipal University Jaipur</p>
 </div>
+
+</div>
+
+<nav>
+<a href="#problem">PROBLEM</a>
+<a href="#method">METHODOLOGY</a>
+<a href="#results">RESULTS</a>
 </nav>
 
-<!-- HERO -->
+</header>
 
-<div class="hero">
+<!-- ===== HERO ===== -->
 
-<div class="id">ID: 2427030246</div>
+<section class="hero">
 
-<h1 class="gradient" style="font-size:60px;">
-CNN SKIN DISEASE DETECTION
-</h1>
+<p class="id">Reg no.- 2427030246</p>
 
-<p style="opacity:.6;">
+<h1>CNN SKIN DISEASE DETECTION</h1>
+
+<p class="subtitle">
 Deep learning classification of dermoscopic lesions using CNN
 </p>
 
-</div>
+</section>
 
-<div class="container">
+<!-- ===== PROBLEM + LITERATURE ===== -->
 
-<!-- PROBLEM -->
+<section class="grid2" id="problem">
 
-<div class="flex">
-
-<div class="card box">
+<div class="card big">
 <h2>Problem Statement</h2>
 
-<p style="opacity:.7;">
-Manual diagnosis of skin diseases requires dermatology expertise and may be subjective.
-This project develops a CNN-based automated classifier for dermoscopic lesion detection.
-</p>
-
-</div>
-
-<div class="box">
-
-<div class="card">
-<b>LITERATURE REVIEW</b>
-
-<p style="opacity:.7;">
-Existing ML systems classify skin lesions using CNN architectures
-but often suffer from dataset imbalance and overfitting.
+<p>
+Manual diagnosis of skin diseases requires dermatology expertise and may be subjective.  
+This project builds an automated CNN-based classifier for dermoscopic lesion detection.
 </p>
 </div>
 
-<div class="card">
-<b>RESEARCH GAP</b>
+<div>
 
-<p style="opacity:.7;">
-Our system improves generalization using preprocessing,
-augmentation, and CNN tuning on medical dermoscopy datasets.
+<div class="card small">
+<h3>LITERATURE REVIEW</h3>
+<p>
+Existing ML systems classify skin lesions using CNN architectures but often suffer from dataset imbalance and overfitting.
+</p>
+</div>
+
+<div class="card small purple">
+<h3>RESEARCH GAP</h3>
+<p>
+Our system improves generalization using preprocessing, augmentation, and CNN tuning on medical dermoscopy datasets.
 </p>
 </div>
 
 </div>
 
-</div>
+</section>
 
-<!-- SYSTEM -->
+<!-- ===== METHODOLOGY ===== -->
 
-<h2 class="center" style="margin-top:60px;">SYSTEM METHODOLOGY</h2>
+<section id="method">
 
-<div class="flex">
+<h2 class="center">SYSTEM METHODOLOGY</h2>
 
-<div class="card box center">
-<b>DATASET</b>
+<div class="grid3">
+
+<div class="card mid">
+<h4>DATASET</h4>
 <p>Mendeley + HAM10000 dermoscopic images</p>
 </div>
 
-<div class="card box center">
-<b>MODEL</b>
+<div class="card mid">
+<h4>MODEL</h4>
 <p>CNN with Conv, Pooling, Dropout, Dense</p>
 </div>
 
-<div class="card box center">
-<b>LIVE EXECUTION</b>
+<div class="card mid">
+<h4>LIVE EXECUTION</h4>
 <p>Python TensorFlow implementation</p>
 </div>
 
 </div>
 
-<!-- RESULTS -->
+</section>
 
-<div class="card">
+<!-- ===== RESULTS ===== -->
 
-<h2 class="center">RESULTS & ANALYSIS</h2>
+<section id="results">
 
-<p class="center" style="font-size:30px;">
-Accuracy: <b>49%</b>
-</p>
+<div class="card result">
+
+<h2>RESULTS & ANALYSIS</h2>
+
+<h1 class="accuracy">Accuracy: 49%</h1>
 
 </div>
 
-<!-- TEAM -->
+</section>
 
-<div class="center" style="margin-top:60px;">
+<!-- ===== CREDITS ===== -->
 
-<div class="flex" style="justify-content:center;">
+<section class="grid2">
 
-<div class="card box center">
-PROJECT GUIDE
+<div class="card mid">
+<h4>PROJECT GUIDE</h4>
 <h3>Mr Arvind Mehta</h3>
 </div>
 
-<div class="card box center">
-STUDENT
-<h3>Shreshth Juneja</h3>
+<div class="card mid">
+<h4>STUDENT</h4>
+<h3>Shreshth Juneja</hh3>
+<h2>Reg no.- 2427030246</hh3>
 </div>
 
-</div>
+</section>
 
-</div>
 
-</div>
+<!-- ===== TIMER ===== -->
 
-<div class="footer">
-Manipal University Jaipur • Department of CSE • 2026
-</div>
+<div id="timer">03:00</div>
 
-<!-- TIMER -->
-
-<div id="timer">00:00</div>
-
-<script>
-let sec=0;
-setInterval(()=>{
-sec++;
-let m=Math.floor(sec/60);
-let s=sec%60;
-document.getElementById("timer").innerText=
-String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
-},1000);
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
