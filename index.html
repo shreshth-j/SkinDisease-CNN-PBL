@@ -2,75 +2,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CNN Skin Disease Detection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Skin Disease CNN PBL</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
-body{background:#020617;color:white;font-family:system-ui}
-.glass{background:rgba(255,255,255,0.04);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.08);}
-.gradient-text{background:linear-gradient(90deg,#60a5fa,#a855f7);
--webkit-background-clip:text;-webkit-text-fill-color:transparent}
-html{scroll-behavior:smooth}
+
+body{
+background:#020617;
+color:#f8fafc;
+font-family:'Plus Jakarta Sans',sans-serif;
+}
+
+.glass{
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.gradient{
+background:linear-gradient(90deg,#60a5fa,#a855f7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* TIMER */
+#timerBox{
+position:fixed;
+bottom:30px;
+right:30px;
+background:white;
+color:black;
+padding:15px 30px;
+border-radius:30px;
+font-weight:900;
+font-size:28px;
+box-shadow:0 0 30px rgba(0,0,0,.6);
+z-index:999;
+}
+
 </style>
 </head>
 
-<body>
+<body onload="startTimer()">
+
+<!-- TIMER -->
+<div id="timerBox">00:00</div>
 
 <!-- NAVBAR -->
-<nav class="fixed w-full top-0 glass px-8 py-4 flex justify-between z-50">
-<div class="font-bold text-lg">SkinDisease-CNN-PBL</div>
-<div class="flex gap-6 text-sm">
-<a href="#problem">Problem</a>
-<a href="#method">Method</a>
-<a href="#results">Results</a>
+<nav class="fixed w-full glass border-b border-slate-800 px-8 py-4 flex justify-between z-50">
+
+<div class="flex gap-4 items-center">
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/Manipal_University_Jaipur_logo.png/120px-Manipal_University_Jaipur_logo.png" style="height:45px">
+<div>
+<div class="font-black">PBL 2026</div>
+<div class="text-xs text-slate-400">Dept of CSE</div>
 </div>
+</div>
+
+<div class="hidden md:flex gap-8 text-xs uppercase tracking-widest">
+<a href="#problem">Problem</a>
+<a href="#method">Methodology</a>
+<a href="#results">Results</a>
+<a href="#team">Team</a>
+</div>
+
 </nav>
 
-<div class="pt-32 max-w-6xl mx-auto px-6 space-y-32">
+
+
+<main class="max-w-6xl mx-auto px-6 pt-48 pb-32 space-y-32">
+
 
 <!-- HERO -->
 <section class="text-center">
-<h1 class="text-6xl font-black mb-6">
-<span class="gradient-text">CNN-Based Skin Disease Detection</span>
+
+<div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-xs mb-6">
+ID : 24XXXXXXX
+</div>
+
+<h1 class="text-6xl md:text-7xl font-extrabold mb-8 uppercase">
+<span class="gradient">CNN Skin Disease Detection</span>
 </h1>
 
-<p class="text-slate-400 italic text-lg">
-AI model for automatic classification of dermoscopic skin lesions.
+<p class="text-slate-400 italic max-w-2xl mx-auto">
+AI-based CNN model for automatic classification of dermoscopic skin lesions into multiple disease classes.
 </p>
+
 </section>
+
 
 
 <!-- PROBLEM -->
 <section id="problem" class="grid md:grid-cols-2 gap-12">
 
-<div class="glass p-10 rounded-3xl">
-<h2 class="text-3xl font-bold mb-6">Problem Statement</h2>
+<div class="glass p-10 rounded-[2rem] border-l-4 border-blue-600">
+<h2 class="text-3xl font-extrabold mb-6">Problem Statement</h2>
 
 <p class="text-slate-400 leading-relaxed">
-Manual dermatology diagnosis requires expert knowledge and is subjective.
-Our system builds an automated CNN-based classifier capable of identifying
-skin diseases from lesion images for early detection and improved healthcare accessibility.
+Manual dermatology diagnosis requires specialist expertise and is time-consuming.
+Our project proposes a CNN-based automated classification system capable of identifying
+multiple skin diseases from dermoscopic images.
 </p>
-
 </div>
+
 
 <div class="space-y-6">
 
-<div class="glass p-6 rounded-2xl">
-<h3 class="text-blue-400 font-bold mb-2">Literature Review</h3>
-<p class="text-slate-400 text-sm">
-Traditional ML systems depend on handcrafted features.
-Recent CNN architectures achieve strong performance but require large datasets.
+<div class="glass p-7 rounded-3xl border-r-4 border-blue-500">
+<h3 class="text-blue-400 font-bold text-xs uppercase mb-2">Literature Review</h3>
+<p class="text-sm text-slate-500">
+Existing solutions rely on traditional feature extraction and require large datasets.
 </p>
 </div>
 
-<div class="glass p-6 rounded-2xl">
-<h3 class="text-purple-400 font-bold mb-2">Research Gap</h3>
-<p class="text-slate-400 text-sm">
-Need lightweight CNN optimized for limited datasets and deployable for real-time classification.
+<div class="glass p-7 rounded-3xl border-r-4 border-purple-500">
+<h3 class="text-purple-400 font-bold text-xs uppercase mb-2">Research Gap</h3>
+<p class="text-sm text-slate-500">
+Need optimized CNN trained on smaller dataset with scalability toward HAM10000.
 </p>
 </div>
 
@@ -78,10 +132,11 @@ Need lightweight CNN optimized for limited datasets and deployable for real-time
 </section>
 
 
+
 <!-- METHODOLOGY -->
 <section id="method">
 
-<h2 class="text-4xl text-center font-black mb-12">
+<h2 class="text-4xl font-black text-center uppercase mb-12">
 System <span class="text-blue-500">Methodology</span>
 </h2>
 
@@ -89,58 +144,54 @@ System <span class="text-blue-500">Methodology</span>
 
 <div class="glass p-8 rounded-3xl text-center">
 <h3 class="font-bold mb-2">Dataset</h3>
-<p class="text-slate-400 text-sm">
-Mendeley Skin Dataset — 3230 dermoscopic images.
-<br><br>
-Future improvement: HAM10000 dataset integration.
+<p class="text-sm text-slate-500">
+3230 dermoscopic images (Mendeley dataset).
+Future integration with HAM10000.
 </p>
 </div>
 
 <div class="glass p-8 rounded-3xl text-center">
 <h3 class="font-bold mb-2">Model</h3>
-<p class="text-slate-400 text-sm">
-CNN architecture with convolution, pooling, dropout and dense layers.
-Built using TensorFlow & Keras.
+<p class="text-sm text-slate-500">
+CNN architecture with Conv2D, MaxPooling, Dropout, Dense layers using TensorFlow.
 </p>
 </div>
 
-<div class="glass p-8 rounded-3xl text-center border border-green-500/40">
+<div class="glass p-8 rounded-3xl text-center border border-green-500 bg-green-500/5">
 <h3 class="text-green-400 font-bold mb-4">Repository</h3>
 <a href="https://github.com/shreshth-j/SkinDisease-CNN-PBL"
-class="bg-green-600 px-6 py-2 rounded-full font-bold">
-View GitHub
+class="bg-green-600 px-6 py-2 rounded-full text-xs font-black">
+VIEW GITHUB
 </a>
 </div>
 
 </div>
-
 </section>
 
 
 
 <!-- RESULTS -->
-<section id="results" class="glass p-12 rounded-3xl">
+<section id="results" class="glass p-12 rounded-[3rem] border-t-4 border-blue-500">
 
-<h2 class="text-3xl font-black mb-10 text-center">
-Results & Evaluation
+<h2 class="text-3xl font-black mb-12 text-center">
+Results & Analysis
 </h2>
 
-<div class="grid md:grid-cols-2 gap-12">
+<div class="grid md:grid-cols-2 gap-16 items-center">
 
-<div style="height:300px">
+<div style="height:320px">
 <canvas id="chart"></canvas>
 </div>
 
-<div class="flex flex-col justify-center">
+<div>
 
-<div class="glass p-6 rounded-2xl mb-6">
-<span class="text-slate-400">Current Accuracy</span>
-<div class="text-4xl text-blue-400 font-black">46%</div>
+<div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10">
+<span class="text-slate-400">Model Accuracy</span>
+<span class="text-blue-400 font-black text-3xl">46%</span>
 </div>
 
-<p class="text-slate-400 text-sm">
-Performance expected to improve beyond 90% after integrating HAM10000 dataset
-and applying transfer learning with MobileNet / EfficientNet.
+<p class="text-slate-500 mt-6 text-sm">
+Accuracy expected to improve beyond 90% after training on HAM10000 dataset.
 </p>
 
 </div>
@@ -149,24 +200,63 @@ and applying transfer learning with MobileNet / EfficientNet.
 
 </section>
 
+
+
+<!-- TEAM -->
+<section id="team" class="text-center">
+
+<h2 class="text-xs text-slate-600 uppercase tracking-widest mb-10">
+Academic Credits
+</h2>
+
+<div class="flex justify-center gap-10">
+
+<div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-blue-600">
+<p class="text-xs text-blue-500">Project Guide</p>
+<p class="font-black text-xl">Dr. Ajay Kumar</p>
 </div>
 
+<div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-slate-700">
+<p class="text-xs text-slate-400">Student</p>
+<p class="font-black text-xl">Shreshth Juneja</p>
+<p class="text-xs text-slate-500">24XXXXXXX</p>
+</div>
+
+</div>
+
+</section>
+
+</main>
 
 
-<!-- CHART SCRIPT -->
+
+<!-- FOOTER -->
+<footer class="py-12 text-center text-slate-500 text-xs">
+Manipal University Jaipur • Department of CSE • 2026
+</footer>
+
+
+
 <script>
+
+let sec=0;
+function startTimer(){
+setInterval(()=>{
+sec++;
+let m=Math.floor(sec/60);
+let s=sec%60;
+document.getElementById("timerBox").innerText=
+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+},1000);
+}
+
 new Chart(document.getElementById("chart"),{
 type:'bar',
-data:{
-labels:["Baseline","CNN Model"],
-datasets:[{
-data:[20,46],
-backgroundColor:["#1e293b","#3b82f6"],
-borderRadius:12
-}]
-},
+data:{labels:["Baseline","CNN"],
+datasets:[{data:[20,46],backgroundColor:["#1e293b","#3b82f6"],borderRadius:15}]},
 options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}
 });
+
 </script>
 
 </body>
