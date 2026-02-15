@@ -21,3 +21,12 @@ Current model accuracy: ~46%
 - Transfer learning (EfficientNet)
 - Data augmentation
 - Class balancing
+
+## Dataset Expansion (Planned)
+
+The HAM10000 dataset will be added in the next phase to:
+
+- Increase training sample size
+- Improve class balance
+- Reduce overfitting
+- Enhance model accuracy and robustness
