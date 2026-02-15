@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Skin Disease Detection - PBL</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+<h1>CNN-Based Skin Disease Detection System</h1>
+<p>AI model for automatic classification of skin lesion images</p>
+</header>
+
+<section>
+<h2>Problem Statement</h2>
+<p>
+Manual diagnosis of skin diseases requires dermatology expertise and may be subjective.
+This project builds an automated CNN-based image classifier for early detection.
+</p>
+</section>
+
+<section>
+<h2>Dataset</h2>
+<p>
+Mendeley Skin Disease Dataset containing 3230 dermoscopic images across 6 classes.
+Images resized to 128x128 and normalized.
+</p>
+</section>
+
+<section>
+<h2>Model Architecture</h2>
+<p>
+CNN with convolution layers, pooling layers, dropout, and dense layers using TensorFlow & Keras.
+</p>
+</section>
+
+<section>
+<h2>Results</h2>
+
+<canvas id="chart"></canvas>
+
+<p>Current validation accuracy: <b>46%</b></p>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
