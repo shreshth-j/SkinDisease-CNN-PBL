@@ -1,16 +1,12 @@
-const ctx = document.getElementById('chart');
+let time = 180;
 
-new Chart(ctx, {
-type: 'bar',
-data: {
-labels: ['Baseline', 'CNN Model'],
-datasets: [{
-data: [20, 46],
-backgroundColor: ['#333', '#3b82f6']
-}]
-},
-options:{
-plugins:{legend:{display:false}},
-scales:{y:{beginAtZero:true}}
-}
-});
+setInterval(()=>{
+time--;
+
+let m=Math.floor(time/60);
+let s=time%60;
+
+document.getElementById("timer").innerText=
+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+
+},1000);
