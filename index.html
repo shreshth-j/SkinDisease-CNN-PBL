@@ -2,267 +2,262 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>CNN Skin Disease Detection</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
+
 body{
-margin:0;
 background:#020617;
 color:white;
-font-family:Inter;
-}
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:140px 20px 80px;
-text-align:center;
+font-family:'Plus Jakarta Sans',sans-serif;
+margin:0;
 }
 
 /* NAVBAR */
-
 nav{
 position:fixed;
 top:0;
 width:100%;
-background:#020617;
-border-bottom:1px solid rgba(255,255,255,.05);
-padding:16px 40px;
+padding:15px 40px;
 display:flex;
 justify-content:space-between;
-align-items:center;
-z-index:999;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
 }
 
-.logo{
-font-weight:800;
+nav img{height:38px;}
+
+nav a{
+color:#aaa;
+margin-left:20px;
+text-decoration:none;
+font-weight:600;
 }
 
-.menu span{
-margin-left:30px;
-font-size:13px;
-color:#94a3b8;
+/* HERO */
+
+.hero{
+padding-top:140px;
+text-align:center;
 }
 
-/* TITLE */
-
-h1{
-font-size:60px;
+.gradient{
 background:linear-gradient(90deg,#60a5fa,#a855f7);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+}
+
+.id{
+font-size:12px;
+opacity:.6;
+margin-bottom:15px;
+}
+
+/* CARDS */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:50px 20px;
+}
+
+.card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:22px;
+padding:30px;
 margin:20px 0;
 }
 
-.subtitle{
-color:#94a3b8;
-max-width:600px;
-margin:auto;
-}
-
-/* GLASS CARDS */
-
-.card{
-background:rgba(255,255,255,.03);
-border:1px solid rgba(255,255,255,.08);
-border-radius:26px;
-padding:40px;
-margin:30px auto;
-max-width:800px;
-}
-
-/* GRID */
-
-.row{
+.flex{
 display:flex;
 gap:20px;
-justify-content:center;
 flex-wrap:wrap;
 }
 
-/* small cards */
-
-.small{
-width:260px;
-padding:30px;
+.box{
+flex:1;
+min-width:250px;
 }
 
-/* results panel */
-
-.results{
-border:2px solid #2563eb;
-padding:60px;
-}
-
-/* credits */
-
-.credits{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-top:60px;
-}
-
-.credit{
-padding:30px 45px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.08);
-background:rgba(255,255,255,.03);
-}
+.center{text-align:center}
 
 /* TIMER */
 
 #timer{
 position:fixed;
-bottom:25px;
-right:25px;
-background:#fca5a5;
-color:#7f1d1d;
-padding:14px 25px;
-border-radius:30px;
-font-weight:800;
+bottom:30px;
+right:30px;
+background:white;
+color:black;
+padding:10px 25px;
+border-radius:25px;
+font-size:26px;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+opacity:.4;
+padding:60px 0 20px;
+font-size:12px;
 }
 
 </style>
 </head>
 
+<body>
 
-
-<body onload="timer()">
-
+<!-- NAVBAR -->
 <nav>
-<div class="logo">PBL 2026</div>
-<div class="menu">
-<span>PROBLEM</span>
-<span>METHODOLOGY</span>
-<span>RESULTS</span>
-<span>TEAM</span>
+<div>
+<img src="logo.png">
+</div>
+
+<div>
+<a href="#">PROBLEM</a>
+<a href="#">METHODOLOGY</a>
+<a href="#">RESULTS</a>
+<a href="#">TEAM</a>
 </div>
 </nav>
 
+<!-- HERO -->
 
+<div class="hero">
+
+<div class="id">ID: 2427030246</div>
+
+<h1 class="gradient" style="font-size:60px;">
+CNN SKIN DISEASE DETECTION
+</h1>
+
+<p style="opacity:.6;">
+Deep learning classification of dermoscopic lesions using CNN
+</p>
+
+</div>
 
 <div class="container">
 
-<div style="color:#94a3b8;">ID : 2427030246</div>
-
-<h1>CNN Skin Disease Detection</h1>
-
-<div class="subtitle">
-Deep learning classification of dermoscopic skin lesions using CNN architecture.
-</div>
-
-
-
 <!-- PROBLEM -->
 
-<div class="row">
+<div class="flex">
 
-<div class="card small">
-<h3>Problem Statement</h3>
-<p>
-Manual dermatological diagnosis is subjective and requires expertise.
-This project proposes an automated CNN-based classifier for skin disease detection.
+<div class="card box">
+<h2>Problem Statement</h2>
+
+<p style="opacity:.7;">
+Manual diagnosis of skin diseases requires dermatology expertise and may be subjective.
+This project develops a CNN-based automated classifier for dermoscopic lesion detection.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="card">
+<b>LITERATURE REVIEW</b>
+
+<p style="opacity:.7;">
+Existing ML systems classify skin lesions using CNN architectures
+but often suffer from dataset imbalance and overfitting.
 </p>
 </div>
 
-<div style="display:flex;flex-direction:column;gap:20px;">
+<div class="card">
+<b>RESEARCH GAP</b>
 
-<div class="card small">
-<h4>Literature Review</h4>
-<p>CNN models outperform traditional ML for medical imaging tasks.</p>
-</div>
-
-<div class="card small">
-<h4>Innovation</h4>
-<p>Optimized CNN trained on dermoscopic datasets for multi-class detection.</p>
+<p style="opacity:.7;">
+Our system improves generalization using preprocessing,
+augmentation, and CNN tuning on medical dermoscopy datasets.
+</p>
 </div>
 
 </div>
 
 </div>
 
+<!-- SYSTEM -->
 
+<h2 class="center" style="margin-top:60px;">SYSTEM METHODOLOGY</h2>
 
-<!-- METHODOLOGY -->
+<div class="flex">
 
-<h2 style="margin-top:70px;">SYSTEM METHODOLOGY</h2>
-
-<div class="row">
-
-<div class="card small">
-<h4>Dataset / Input</h4>
-<p>Mendeley + HAM10000 dermoscopic images.</p>
+<div class="card box center">
+<b>DATASET</b>
+<p>Mendeley + HAM10000 dermoscopic images</p>
 </div>
 
-<div class="card small">
-<h4>Model / Architecture</h4>
-<p>Convolution → Pooling → Dense → Softmax.</p>
+<div class="card box center">
+<b>MODEL</b>
+<p>CNN with Conv, Pooling, Dropout, Dense</p>
 </div>
 
-<div class="card small">
-<h4>Live Execution</h4>
-<p>Python TensorFlow CNN inference.</p>
+<div class="card box center">
+<b>LIVE EXECUTION</b>
+<p>Python TensorFlow implementation</p>
 </div>
 
 </div>
-
-
 
 <!-- RESULTS -->
 
-<div class="card results">
+<div class="card">
 
-<h2>RESULTS & ANALYSIS</h2>
+<h2 class="center">RESULTS & ANALYSIS</h2>
 
-<p style="margin-top:20px;">
-Current validation accuracy ≈ <b>49%</b><br>
-Transfer learning expected to improve performance further.
+<p class="center" style="font-size:30px;">
+Accuracy: <b>49%</b>
 </p>
 
 </div>
 
+<!-- TEAM -->
 
+<div class="center" style="margin-top:60px;">
 
-<!-- CREDITS -->
+<div class="flex" style="justify-content:center;">
 
-<div class="credits">
-
-<div class="credit">
-<div style="color:#60a5fa">Project Guide</div>
-<b>Mr Arvind Mehta</b>
+<div class="card box center">
+PROJECT GUIDE
+<h3>Mr Arvind Mehta</h3>
 </div>
 
-<div class="credit">
-<div style="color:#94a3b8">Student</div>
-<b>Shreshth Juneja</b>
+<div class="card box center">
+STUDENT
+<h3>Shreshth Juneja</h3>
 </div>
 
 </div>
 
 </div>
 
+</div>
 
+<div class="footer">
+Manipal University Jaipur • Department of CSE • 2026
+</div>
+
+<!-- TIMER -->
 
 <div id="timer">00:00</div>
 
-
-
 <script>
-let s=0;
-function timer(){
+let sec=0;
 setInterval(()=>{
-s++;
-let m=Math.floor(s/60);
-let sec=s%60;
+sec++;
+let m=Math.floor(sec/60);
+let s=sec%60;
 document.getElementById("timer").innerText=
-String(m).padStart(2,'0')+":"+String(sec).padStart(2,'0');
+String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
 },1000);
-}
 </script>
 
 </body>
