@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -10,145 +9,177 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
-
 body{
 margin:0;
 background:#020617;
 color:white;
 font-family:Inter;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:140px 20px 80px;
 text-align:center;
 }
 
-/* main container */
-.wrapper{
-max-width:900px;
-margin:auto;
-padding:80px 20px;
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#020617;
+border-bottom:1px solid rgba(255,255,255,.05);
+padding:16px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
 }
 
-/* title */
+.logo{
+font-weight:800;
+}
+
+.menu span{
+margin-left:30px;
+font-size:13px;
+color:#94a3b8;
+}
+
+/* TITLE */
 
 h1{
-font-size:52px;
-margin-bottom:10px;
+font-size:60px;
 background:linear-gradient(90deg,#60a5fa,#a855f7);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+margin:20px 0;
 }
 
 .subtitle{
 color:#94a3b8;
-margin-bottom:60px;
+max-width:600px;
+margin:auto;
 }
 
-/* cards */
+/* GLASS CARDS */
 
 .card{
 background:rgba(255,255,255,.03);
 border:1px solid rgba(255,255,255,.08);
+border-radius:26px;
 padding:40px;
-border-radius:20px;
-margin-bottom:40px;
+margin:30px auto;
+max-width:800px;
 }
 
-/* section title */
+/* GRID */
 
-.section-title{
-font-size:28px;
-font-weight:700;
-margin-bottom:25px;
+.row{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
 }
 
-/* mentor/student */
+/* small cards */
 
-.team{
+.small{
+width:260px;
+padding:30px;
+}
+
+/* results panel */
+
+.results{
+border:2px solid #2563eb;
+padding:60px;
+}
+
+/* credits */
+
+.credits{
 display:flex;
 justify-content:center;
 gap:40px;
-margin-top:40px;
+margin-top:60px;
 }
 
-.small-card{
-background:rgba(255,255,255,.03);
+.credit{
 padding:30px 45px;
-border-radius:16px;
+border-radius:18px;
 border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.03);
 }
 
-/* timer */
+/* TIMER */
 
 #timer{
 position:fixed;
-bottom:30px;
-right:30px;
-background:white;
-color:black;
-padding:10px 20px;
+bottom:25px;
+right:25px;
+background:#fca5a5;
+color:#7f1d1d;
+padding:14px 25px;
 border-radius:30px;
 font-weight:800;
 }
 
-/* CNN dots */
-
-.dot{
-width:10px;
-height:10px;
-border-radius:50%;
-background:#3b82f6;
-margin:8px auto;
-}
-
-.column{
-display:inline-block;
-margin:0 40px;
-}
-
 </style>
-
 </head>
 
 
 
 <body onload="timer()">
 
-<div class="wrapper">
+<nav>
+<div class="logo">PBL 2026</div>
+<div class="menu">
+<span>PROBLEM</span>
+<span>METHODOLOGY</span>
+<span>RESULTS</span>
+<span>TEAM</span>
+</div>
+</nav>
 
-<div>ID : 2427030246</div>
+
+
+<div class="container">
+
+<div style="color:#94a3b8;">ID : 2427030246</div>
 
 <h1>CNN Skin Disease Detection</h1>
 
 <div class="subtitle">
-Deep learning classification of dermoscopic lesions using CNN
+Deep learning classification of dermoscopic skin lesions using CNN architecture.
 </div>
 
 
 
-<!-- CNN -->
+<!-- PROBLEM -->
 
-<div class="card">
+<div class="row">
 
-<div class="section-title">CNN Architecture Visualization</div>
-
-<div>
-
-<div class="column">
-Input
-<div class="dot"></div><div class="dot"></div><div class="dot"></div>
+<div class="card small">
+<h3>Problem Statement</h3>
+<p>
+Manual dermatological diagnosis is subjective and requires expertise.
+This project proposes an automated CNN-based classifier for skin disease detection.
+</p>
 </div>
 
-<div class="column">
-Conv Layers
-<div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+<div style="display:flex;flex-direction:column;gap:20px;">
+
+<div class="card small">
+<h4>Literature Review</h4>
+<p>CNN models outperform traditional ML for medical imaging tasks.</p>
 </div>
 
-<div class="column">
-Dense
-<div class="dot"></div><div class="dot"></div>
-</div>
-
-<div class="column">
-Output
-<div class="dot"></div>
+<div class="card small">
+<h4>Innovation</h4>
+<p>Optimized CNN trained on dermoscopic datasets for multi-class detection.</p>
 </div>
 
 </div>
@@ -157,38 +188,56 @@ Output
 
 
 
-<!-- DATASET 
+<!-- METHODOLOGY -->
 
-<div class="card">
-<div class="section-title">Dataset Distribution</div>
+<h2 style="margin-top:70px;">SYSTEM METHODOLOGY</h2>
 
-<img src="dataset.png" style="width:100%;max-width:500px">
+<div class="row">
+
+<div class="card small">
+<h4>Dataset / Input</h4>
+<p>Mendeley + HAM10000 dermoscopic images.</p>
+</div>
+
+<div class="card small">
+<h4>Model / Architecture</h4>
+<p>Convolution → Pooling → Dense → Softmax.</p>
+</div>
+
+<div class="card small">
+<h4>Live Execution</h4>
+<p>Python TensorFlow CNN inference.</p>
+</div>
 
 </div>
 
 
 
-<!-- CONFUSION 
+<!-- RESULTS -->
 
-<div class="card">
-<div class="section-title">Confusion Matrix</div>
+<div class="card results">
 
-<img src="confusion.png" style="width:100%;max-width:500px">
+<h2>RESULTS & ANALYSIS</h2>
 
-</div> -->
+<p style="margin-top:20px;">
+Current validation accuracy ≈ <b>49%</b><br>
+Transfer learning expected to improve performance further.
+</p>
+
+</div>
 
 
 
-<!-- TEAM -->
+<!-- CREDITS -->
 
-<div class="team">
+<div class="credits">
 
-<div class="small-card">
-<div style="color:#60a5fa">Mentor</div>
+<div class="credit">
+<div style="color:#60a5fa">Project Guide</div>
 <b>Mr Arvind Mehta</b>
 </div>
 
-<div class="small-card">
+<div class="credit">
 <div style="color:#94a3b8">Student</div>
 <b>Shreshth Juneja</b>
 </div>
@@ -204,7 +253,6 @@ Output
 
 
 <script>
-
 let s=0;
 function timer(){
 setInterval(()=>{
@@ -215,7 +263,6 @@ document.getElementById("timer").innerText=
 String(m).padStart(2,'0')+":"+String(sec).padStart(2,'0');
 },1000);
 }
-
 </script>
 
 </body>
