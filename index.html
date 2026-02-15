@@ -1,61 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<title>CNN Skin Disease Detection</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
 body{
+margin:0;
 background:#020617;
 color:white;
-font-family:'Plus Jakarta Sans',sans-serif;
+font-family:Inter;
+text-align:center;
 }
 
-.glass{
-background:rgba(255,255,255,0.03);
-backdrop-filter:blur(14px);
-border:1px solid rgba(255,255,255,.08);
+/* main container */
+.wrapper{
+max-width:900px;
+margin:auto;
+padding:80px 20px;
 }
 
-.gradient{
+/* title */
+
+h1{
+font-size:52px;
+margin-bottom:10px;
 background:linear-gradient(90deg,#60a5fa,#a855f7);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
+.subtitle{
+color:#94a3b8;
+margin-bottom:60px;
+}
+
+/* cards */
+
+.card{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.08);
+padding:40px;
+border-radius:20px;
+margin-bottom:40px;
+}
+
+/* section title */
+
+.section-title{
+font-size:28px;
+font-weight:700;
+margin-bottom:25px;
+}
+
+/* mentor/student */
+
+.team{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+}
+
+.small-card{
+background:rgba(255,255,255,.03);
+padding:30px 45px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+/* timer */
+
 #timer{
 position:fixed;
-bottom:25px;
-right:25px;
+bottom:30px;
+right:30px;
 background:white;
 color:black;
-padding:12px 25px;
+padding:10px 20px;
 border-radius:30px;
-font-size:26px;
-font-weight:900;
-z-index:999;
+font-weight:800;
 }
 
-/* CNN animation */
+/* CNN dots */
 
-.node{
-width:14px;height:14px;
-background:#3b82f6;
+.dot{
+width:10px;
+height:10px;
 border-radius:50%;
-margin:8px;
-animation:pulse 2s infinite;
+background:#3b82f6;
+margin:8px auto;
 }
 
-@keyframes pulse{
-0%,100%{opacity:.3}
-50%{opacity:1}
+.column{
+display:inline-block;
+margin:0 40px;
 }
 
 </style>
@@ -66,166 +111,100 @@ animation:pulse 2s infinite;
 
 <body onload="timer()">
 
+<div class="wrapper">
 
-<div id="timer">00:00</div>
+<div>ID : 2427030246</div>
 
+<h1>CNN Skin Disease Detection</h1>
 
-
-<!-- HERO -->
-
-<section class="text-center py-24">
-
-<div class="text-slate-400 mb-3">ID : 2427030246</div>
-
-<h1 class="text-6xl font-black mb-6">
-<span class="gradient">CNN Skin Disease Detection</span>
-</h1>
-
-<p class="text-slate-400">
+<div class="subtitle">
 Deep learning classification of dermoscopic lesions using CNN
-</p>
-
-</section>
+</div>
 
 
 
-<!-- CNN VISUAL -->
+<!-- CNN -->
 
-<section class="max-w-6xl mx-auto p-10 glass rounded-3xl mb-24">
+<div class="card">
 
-<h2 class="text-3xl font-bold mb-10 text-center">CNN Architecture Visualization</h2>
-
-<div class="flex justify-center items-center gap-16">
+<div class="section-title">CNN Architecture Visualization</div>
 
 <div>
-<p class="text-center mb-4">Input</p>
-<div class="flex flex-col items-center">
-<div class="node"></div>
-<div class="node"></div>
-<div class="node"></div>
-</div>
+
+<div class="column">
+Input
+<div class="dot"></div><div class="dot"></div><div class="dot"></div>
 </div>
 
-<div>
-<p class="text-center mb-4">Conv Layers</p>
-<div class="flex flex-col items-center">
-<div class="node"></div>
-<div class="node"></div>
-<div class="node"></div>
-<div class="node"></div>
-</div>
+<div class="column">
+Conv Layers
+<div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
 </div>
 
-<div>
-<p class="text-center mb-4">Dense</p>
-<div class="flex flex-col items-center">
-<div class="node"></div>
-<div class="node"></div>
-</div>
+<div class="column">
+Dense
+<div class="dot"></div><div class="dot"></div>
 </div>
 
-<div>
-<p class="text-center mb-4">Output</p>
-<div class="flex flex-col items-center">
-<div class="node"></div>
-</div>
+<div class="column">
+Output
+<div class="dot"></div>
 </div>
 
 </div>
 
-</section>
+</div>
 
 
 
-<!-- DRAG DROP PREDICTION 
+<!-- DATASET 
 
-<section class="max-w-6xl mx-auto p-10 glass rounded-3xl mb-24">
+<div class="card">
+<div class="section-title">Dataset Distribution</div>
 
-<h2 class="text-3xl font-bold text-center mb-8">
-Live CNN Prediction
-</h2>
-
-<div class="text-center">
-
-<input type="file" id="upload" class="mb-6">
-
-<div id="preview"></div>
-
-<div id="prediction" class="text-3xl font-black text-blue-400 mt-6"></div>
+<img src="dataset.png" style="width:100%;max-width:500px">
 
 </div>
 
-</section> -->
 
 
+<!-- CONFUSION 
 
-<!-- DATASET PIE -->
+<div class="card">
+<div class="section-title">Confusion Matrix</div>
 
-<section class="max-w-6xl mx-auto p-10 glass rounded-3xl mb-24">
+<img src="confusion.png" style="width:100%;max-width:500px">
 
-<h2 class="text-3xl font-bold text-center mb-10">Dataset Distribution</h2>
-
-<div style="height:350px">
-<canvas id="pie"></canvas>
-</div>
-
-</section>
-
-
-
-<!-- TRAINING CURVE -->
-
-<section class="max-w-6xl mx-auto p-10 glass rounded-3xl mb-24">
-
-<h2 class="text-3xl font-bold text-center mb-10">Training Accuracy Curve</h2>
-
-<div style="height:350px">
-<canvas id="curve"></canvas>
-</div>
-
-</section>
-
-
-
-<!-- CONFUSION MATRIX -->
-
-<section class="max-w-6xl mx-auto p-10 glass rounded-3xl mb-24">
-
-<h2 class="text-3xl font-bold text-center mb-10">Confusion Matrix</h2>
-
-<div style="height:350px">
-<canvas id="heat"></canvas>
-</div>
-
-</section>
+</div> -->
 
 
 
 <!-- TEAM -->
 
-<section class="text-center pb-20">
+<div class="team">
 
-<div class="flex justify-center gap-12">
-
-<div class="glass px-12 py-8 rounded-2xl">
-<p class="text-blue-400">Mentor</p>
-<p class="font-black text-xl">Mr Arvind Mehta</p>
+<div class="small-card">
+<div style="color:#60a5fa">Mentor</div>
+<b>Mr Arvind Mehta</b>
 </div>
 
-<div class="glass px-12 py-8 rounded-2xl">
-<p class="text-slate-400">Student</p>
-<p class="font-black text-xl">Shreshth Juneja</p>
+<div class="small-card">
+<div style="color:#94a3b8">Student</div>
+<b>Shreshth Juneja</b>
 </div>
 
 </div>
 
-</section>
+</div>
+
+
+
+<div id="timer">00:00</div>
 
 
 
 <script>
 
-/* TIMER */
 let s=0;
 function timer(){
 setInterval(()=>{
@@ -236,57 +215,6 @@ document.getElementById("timer").innerText=
 String(m).padStart(2,'0')+":"+String(sec).padStart(2,'0');
 },1000);
 }
-
-
-/* FAKE PREDICTION */
-
-document.getElementById("upload").onchange=e=>{
-let file=e.target.files[0];
-let img=document.createElement("img");
-img.src=URL.createObjectURL(file);
-img.style.width="200px";
-img.className="mx-auto mb-4";
-document.getElementById("preview").innerHTML="";
-document.getElementById("preview").appendChild(img);
-
-const diseases=["BCC","MEL","NEV","SCC","SEK","ACK"];
-
-setTimeout(()=>{
-document.getElementById("prediction").innerText=
-"Prediction : "+diseases[Math.floor(Math.random()*6)];
-},1200);
-};
-
-
-
-/* PIE */
-new Chart(document.getElementById("pie"),{
-type:'pie',
-data:{
-labels:["ACK","BCC","MEL","NEV","SCC","SEK"],
-datasets:[{data:[932,1261,84,326,292,335]}]
-}
-});
-
-
-/* CURVE */
-new Chart(document.getElementById("curve"),{
-type:'line',
-data:{
-labels:[1,2,3,4,5,6,7,8,9,10],
-datasets:[{data:[20,25,30,34,37,40,42,44,45,46]}]
-}
-});
-
-
-/* HEATMAP SIM */
-new Chart(document.getElementById("heat"),{
-type:'bar',
-data:{
-labels:["ACK","BCC","MEL","NEV","SCC","SEK"],
-datasets:[{data:[85,92,70,88,90,87]}]
-}
-});
 
 </script>
 
