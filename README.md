@@ -15,7 +15,7 @@ Mendeley Skin Disease Dataset (3230 images)
 - HTML/CSS/JS for visualization
 
 ## Results
-Current model accuracy: ~46%
+Current model accuracy: 71.65%
 
 ## Future Work
 - Transfer learning (EfficientNet)
